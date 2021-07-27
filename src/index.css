@@ -47,7 +47,8 @@ code {
 }
 
 .new {
-  background-color: #e9b9d2;
+  /* background-color: #e9b9d2; */
+  background-color: rgb(231, 231, 231);
   
 }
 
@@ -64,7 +65,8 @@ textarea {
   border: none;
   resize: none; /* stops user from being able to resize the text input field */
 
-  background-color: #e9b9d2;
+  /* background-color: #e9b9d2; */
+  background-color: inherit;
 }
 
 textarea:focus {
@@ -215,4 +217,27 @@ button:active {
 
 .dark-mode .search-clear-icon:active {
   color: rgb(167, 65, 65);
+}
+
+.note-title {
+  font-size: 20px;
+}
+
+.existing-note-title {
+  font-size: 20px;
+  max-height: 15px;
+  word-break: break-all;
+  display: flex;
+  white-space: normal;
+  padding-bottom: 8%;
+}
+
+.new-note-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-text {
+  color: rgb(102, 102, 102);
+  font-style: oblique;
 }

@@ -22,12 +22,13 @@ export default function App() {
     localStorage.setItem('all-notes', JSON.stringify(notes));
   }, [notes]);
 
-  const addNote = (newNoteText) => {
+  const addNote = (...newNoteText) => {
     var today = new Date();
 
     setNotes((prev) => ([{
       id: nanoid(),
-      text: newNoteText,
+      title: newNoteText[1],
+      text: newNoteText[0],
       date: today.toLocaleDateString()
     }, ...prev
     ]));
@@ -53,7 +54,7 @@ export default function App() {
       <div className="container">
         <Header handleDarkModeToggle={setDarkMode} currentMode={darkMode} />
         <Search handleNoteSearch={setSearchText} />
-        <NotesList notes={notes.filter(note => note.text.toLowerCase().includes(searchText.toLowerCase()))} handleAddNote={addNote} handleDeleteNote={deleteNote} />
+        <NotesList notes={notes.filter(note => note.text.toLowerCase().includes(searchText.toLowerCase()) || note.title.toLowerCase().includes(searchText.toLowerCase()))} handleAddNote={addNote} handleDeleteNote={deleteNote} />
       </div>
     </div>
   );
