@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: white;
 }
 
 /* --- Default CSS. Left it as is --- */
@@ -17,7 +18,8 @@ code {
 
 .container {
   max-width: 960px; /* nothing in the container will go beyond this length. So nothing gets stretched on bigger screens */
-
+  min-height: 100vh;
+  
   /* these keep things centered on larger screens */
   margin-right: auto;
   margin-left: auto;
@@ -50,7 +52,7 @@ code {
 }
 
 .grow {
-  transition:all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .grow:hover
@@ -80,6 +82,10 @@ button {
 button:hover {
   background-color: #b9b9b9;
   cursor: pointer;
+}
+
+button:active {
+  background-color: #979797;
 }
 
 
@@ -148,4 +154,65 @@ button:hover {
 .search-clear-icon:hover {
   color: rgb(216, 64, 64);
   transform: scale(0.8);
-} 
+}
+
+.search-clear-icon:active {
+  color: rgb(167, 65, 65);
+}
+
+.clear {
+  margin-right: 8px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dark-mode {
+  background-color: rgb(51, 50, 54);
+  transition: all 0.3s ease;
+}
+
+.light-mode {
+  transition: all 0.3s ease;
+}
+
+.dark-mode h1 {
+  color: white;
+}
+
+.dark-mode button {
+  background-color: rgb(32, 31, 34);
+  color: white;
+}
+
+.dark-mode button:hover {
+  background-color: rgb(56, 55, 59);
+}
+
+.dark-mode button:active {
+  background-color: rgb(25, 25, 27);
+}
+
+.dark-mode .search-container {
+  background-color: rgb(59, 57, 63);
+}
+
+.dark-mode .search-bar {
+  background-color: rgb(59, 57, 63);
+  color: white;
+}
+
+.dark-mode .search-icon, .dark-mode .search-clear-icon {
+  color: white;
+}
+
+.dark-mode .search-clear-icon:hover {
+  color: rgb(216, 64, 64);
+}
+
+.dark-mode .search-clear-icon:active {
+  color: rgb(167, 65, 65);
+}
