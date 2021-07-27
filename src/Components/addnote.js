@@ -33,7 +33,7 @@ const AddNote = ({handleNewNote}) => {
         }
 
         if (noteTitle.trim().length <= 0) {
-            handleNewNote(noteText, 'Untitled');
+            handleNewNote(noteText, 'Untitled', bgColour);
         }
         else {
             handleNewNote(noteText, noteTitle, bgColour);
