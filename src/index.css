@@ -27,9 +27,8 @@ code {
   padding: 1rem;
 }
 
-
 .note {
-  background-color: #9bd4e6;
+  background-color: #badde8;
   border-radius: 10px;
   padding: 1rem;
   min-height: 200px;
@@ -46,11 +45,11 @@ code {
   <div className='note-footer'></div>, containing the icon and date, at the very bottom of the container. */
 }
 
-.new {
-  /* background-color: #e9b9d2; */
-  background-color: rgb(231, 231, 231);
+/* .new {
+  background-color: #e9b9d2;
+  background-color: #e7e7e7;
   
-}
+} */
 
 .grow {
   transition: all 0.3s ease;
@@ -163,7 +162,7 @@ button:active {
 }
 
 .clear {
-  margin-right: 8px;
+  margin-right: 5px;
 }
 
 .header {
@@ -232,6 +231,10 @@ button:active {
   padding-bottom: 8%;
 }
 
+.existing-note-text {
+  word-break: break-all;
+}
+
 .new-note-header {
   display: flex;
   flex-direction: column;
@@ -240,4 +243,8 @@ button:active {
 .date-text {
   color: rgb(102, 102, 102);
   font-style: oblique;
+}
+
+.colour-picker-btn {
+  margin-top: 5px;
 }

@@ -22,13 +22,14 @@ export default function App() {
     localStorage.setItem('all-notes', JSON.stringify(notes));
   }, [notes]);
 
-  const addNote = (...newNoteText) => {
+  const addNote = (...newNote) => {
     var today = new Date();
 
     setNotes((prev) => ([{
       id: nanoid(),
-      title: newNoteText[1],
-      text: newNoteText[0],
+      title: newNote[1],
+      text: newNote[0],
+      colour: newNote[2],
       date: today.toLocaleDateString()
     }, ...prev
     ]));
@@ -37,17 +38,6 @@ export default function App() {
   const deleteNote = (noteId) => {
     setNotes(notes.filter(note => note.id !== noteId));
   }
-
-  // ==--- && SYNTAX ---==
-  // The && syntax below will return the second value, in other words will apply the dark-mode class, if and only if
-  // the first value, the darkMode state, is truthy (so not false, 0, NaN, or an empty string - those are falsy).
-  // If the first value is falsy, it returns the first value instead of the second. 
-
-  // E.g. 
-  //      true && 'hello' 
-  //      would return 'hello' (see React folder 82.)
-  //          while 0 && 'goodbye'
-  //          would return 0
 
   return (
     <div className={`${darkMode ? 'dark-mode' : 'light-mode'}`}>
@@ -60,5 +50,3 @@ export default function App() {
   );
 
 }
-
-// export default App;

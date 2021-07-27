@@ -1,8 +1,10 @@
 import {useState} from 'react';
+import ColourPicker from './colourpicker';
 
 const AddNote = ({handleNewNote}) => {
     const [noteText, setNoteText] = useState('');
     const [noteTitle, setNoteTitle] = useState('');
+    const [bgColour, setBgColour] = useState('#e7e7e7');
     const charLimit = 500;
     const titleCharLimit = 22;
 
@@ -34,21 +36,25 @@ const AddNote = ({handleNewNote}) => {
             handleNewNote(noteText, 'Untitled');
         }
         else {
-            handleNewNote(noteText, noteTitle);
+            handleNewNote(noteText, noteTitle, bgColour);
         }
 
         setNoteText(''); // clear new note text area upon submitting
         setNoteTitle('');
+        setBgColour('#e7e7e7');
     };
 
     const handleClear = () => {
         setNoteText('');
         setNoteTitle('');
-    }
+    };
+
+    const newNoteColour = {backgroundColor: bgColour};
 
     return (
-        <div className="note new grow">
+        <div className="note grow new" style={newNoteColour} >
 
+            <ColourPicker handleColourChange={setBgColour} currentColour={bgColour} />
             <div className="new-note-header">
                 <textarea className="note-title"
                 rows="2"
@@ -71,8 +77,10 @@ const AddNote = ({handleNewNote}) => {
             <div className="note-footer">
                 <small>{charLimit - noteText.length} left</small>
                 <div>
+                    
                     <button className="clear" onClick={handleClear}>Clear</button>
                     <button className="save" onClick={handleSubmit}>Add note</button>
+                    
                 </div>
                 
             </div>

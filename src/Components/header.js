@@ -1,6 +1,6 @@
 const Header = ({handleDarkModeToggle, currentMode}) => {
 
-    var btnTxt = currentMode ? '☀️ Enable light mode' : '🌙 Enable dark mode'
+    var btnTxt = currentMode ? '☀️ Enable light mode' : '🌙 Enable dark mode';
 
     return (
         <div className="header">

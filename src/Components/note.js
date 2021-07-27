@@ -2,10 +2,11 @@ import {MdDeleteForever} from 'react-icons/md'; // delete icon
 
 // Note component. This will be the design of a single note on the page.
 
-const Note = ({id, text, title, date, handleDeleteNote}) => {
+const Note = ({id, text, title, colour, date, handleDeleteNote}) => {
+    console.log("Colour: " + colour);
 
     return (  
-        <div className="note grow">
+        <div className="note grow" style={{backgroundColor: colour}}>
             <div>
                 <p className="existing-note-title">{title}</p>
                 <span className="existing-note-text">{text}</span>
