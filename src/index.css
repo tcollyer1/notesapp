@@ -1,3 +1,4 @@
+/* --- Default CSS. Left it as is --- */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +8,144 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* --- Default CSS. Left it as is --- */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.container {
+  max-width: 960px; /* nothing in the container will go beyond this length. So nothing gets stretched on bigger screens */
+
+  /* these keep things centered on larger screens */
+  margin-right: auto;
+  margin-left: auto;
+
+  padding: 1rem;
+}
+
+
+.note {
+  background-color: #9bd4e6;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 200px;
+
+  white-space: pre-wrap; /* this just makes it so all original line spacing typed by the user isn't lost */
+
+  display: flex; /* arranges child elements in a single row */
+
+  flex-direction: column; /* changes flex behaviour to arrange in a single column instead of row */
+
+  justify-content: space-between; /* evenly space children based on the flex direction within the note container from the very start to end of the container - in this case vertically as the flex direction is set to column. */
+  
+  /* See note.js - sets the <span></span> element at the top of the container, with the 
+  <div className='note-footer'></div>, containing the icon and date, at the very bottom of the container. */
+}
+
+.new {
+  background-color: #e9b9d2;
+  
+}
+
+.grow {
+  transition:all 0.3s ease;
+}
+
+.grow:hover
+{
+  transform: scale(1.05);
+}
+
+textarea {
+  border: none;
+  resize: none; /* stops user from being able to resize the text input field */
+
+  background-color: #e9b9d2;
+}
+
+textarea:focus {
+  outline: none; /* this removes the outline when the user clicks on the input field */
+}
+
+button {
+  background-color: #cfcfcf;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 10px 5px 10px; /* Styles top, right, bottom then left */
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #b9b9b9;
+  cursor: pointer;
+}
+
+
+.notes-list {
+  display: grid; /* using a CSS grid to arrange the notes in a grid format */
+
+  grid-gap: 1rem; /* sets gap size between elements in the grid */
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* sets the grid to have a set columns, each of a set width. */
+  
+  /* The repeat() function works as repeat(num_columns, column_size). Here we set the number of columns to
+  auto-fit so that the number of columns will just adapt to the window's size, and the column size to
+  minmax(250px, 1fr), which means the column can have a minimum size of 250px up to 1 fractional unit (the 1fr). */
+}
+
+
+.note-footer {
+  display: flex;
+
+  align-items: center; /* Aligns all child elements (date + icon here) vertically so they line up nicely */
+
+  justify-content: space-between;
+}
+
+.delete-icon {
+  cursor: pointer;
+  color: #2a2a2a;
+  transition: all 0.3s ease;
+}
+
+.delete-icon:hover {
+  color: rgb(216, 64, 64);
+  transform: rotateZ(+10deg) scale(1.7);
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #e6e6e6;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 1.5em;
+  transition: box-shadow 0.25s ease;
+}
+
+.search-bar {
+  background-color: #e6e6e6;
+  border: none;
+  width: 100%;
+}
+
+.search-bar:focus {
+  outline: none;
+}
+
+.search-container:hover {
+  box-shadow: 0px 0px 5px #727272;
+}
+
+.search-clear-icon {
+  cursor: pointer;
+  color: #2a2a2a;
+  transition: all 0.3s ease;
+}
+
+.search-clear-icon:hover {
+  color: rgb(216, 64, 64);
+  transform: scale(0.8);
 }

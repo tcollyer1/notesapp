@@ -1,25 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
+import NotesList from './Components/noteslist';
+import Search from './Components/search';
+import {nanoid} from 'nanoid';
 
-function App() {
+export default function App() {
+  const [notes, setNotes] = useState([]);
+  const [searchText, setSearchText] = useState('');
+
+  const addNote = (newNoteText) => {
+    var today = new Date();
+
+    setNotes((prev) => ([{
+      id: nanoid(),
+      text: newNoteText,
+      date: today.toLocaleDateString()
+    }, ...prev
+    ]));
+  }
+
+  const deleteNote = (noteId) => {
+    setNotes(notes.filter(note => note.id !== noteId));
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="container">
+        <Search handleNoteSearch={setSearchText} />
+        <NotesList notes={notes.filter(note => note.text.toLowerCase().includes(searchText.toLowerCase()))} handleAddNote={addNote} handleDeleteNote={deleteNote} />
+      </div>
+      
   );
+
 }
 
-export default App;
+// export default App;
