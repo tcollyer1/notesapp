@@ -11,7 +11,7 @@ const AddNote = ({handleNewNote}) => {
             setNoteText(currentText);
         }
 
-    };
+    }; 
 
     const handleSubmit = () => { 
         if (noteText.trim().length <= 0) {

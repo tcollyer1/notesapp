@@ -17,7 +17,7 @@ export default function App() {
       date: today.toLocaleDateString()
     }, ...prev
     ]));
-  }
+  } 
 
   const deleteNote = (noteId) => {
     setNotes(notes.filter(note => note.id !== noteId));

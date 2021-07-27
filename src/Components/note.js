@@ -4,7 +4,7 @@ import {MdDeleteForever} from 'react-icons/md'; // delete icon
 
 const Note = ({id, text, date, handleDeleteNote}) => {
 
-    return ( 
+    return (  
         <div className="note grow">
             <span>{text}</span>
 

@@ -8,7 +8,7 @@ const Search = ({handleNoteSearch}) => {
         handleNoteSearch('');
     } 
 
-    return(
+    return( 
         <div className="search-container">
             <MdSearch className="search-icon" size="1.3em" />
             <input id="search" onChange={({target}) => handleNoteSearch(target.value)} className="search-bar" type="text" placeholder="Type to filter notes..."></input>

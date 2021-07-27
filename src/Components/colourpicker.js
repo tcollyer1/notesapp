@@ -6,7 +6,7 @@ const ColourPicker = () => {
         <div className="colour-picker">
             <CirclePicker />
         </div>
-    );
+    ); 
 }
 
 export default ColourPicker;
