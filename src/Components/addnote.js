@@ -52,7 +52,7 @@ const AddNote = ({handleNewNote}) => {
     const newNoteColour = {backgroundColor: bgColour};
 
     return (
-        <div className="note grow new" style={newNoteColour} >
+        <div className="note grow" style={newNoteColour} >
 
             <ColourPicker handleColourChange={setBgColour} currentColour={bgColour} />
             <div className="new-note-header">
