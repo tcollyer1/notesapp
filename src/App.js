@@ -42,7 +42,7 @@ export default function App() {
   return (
     <div className={`${darkMode ? 'dark-mode' : 'light-mode'}`}>
       <div className="container">
-        <Header handleDarkModeToggle={setDarkMode} currentMode={darkMode} />
+        <Header handleDarkModeToggle={setDarkMode} isDarkMode={darkMode} />
         <Search handleNoteSearch={setSearchText} />
         <NotesList notes={notes.filter(note => note.text.toLowerCase().includes(searchText.toLowerCase()) || note.title.toLowerCase().includes(searchText.toLowerCase()))} handleAddNote={addNote} handleDeleteNote={deleteNote} />
       </div>
