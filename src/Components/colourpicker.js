@@ -11,7 +11,6 @@ const ColourPicker = ({handleColourChange, currentColour}) => {
             <Tippy 
             interactive={true} 
             placement={'top-start'}
-            animation='scale'
             content={
                 <CirclePicker
                 colors={colours}

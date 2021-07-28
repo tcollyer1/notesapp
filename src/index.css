@@ -28,7 +28,6 @@ code {
 }
 
 .note {
-  /* background-color: #badde8; */
   border-radius: 10px;
   padding: 1rem;
   min-height: 200px;
@@ -41,15 +40,9 @@ code {
 
   justify-content: space-between; /* evenly space children based on the flex direction within the note container from the very start to end of the container - in this case vertically as the flex direction is set to column. */
   
-  /* See note.js - sets the <span></span> element at the top of the container, with the 
-  <div className='note-footer'></div>, containing the icon and date, at the very bottom of the container. */
+  /* See note.js - sets the <div> containing the <p></p> and <span></span> elements at the top of the container, with the 
+  <div className='note-footer'></div> (containing the icon and date) at the very bottom of the container. */
 }
-
-/* .new {
-  background-color: #e9b9d2;
-  background-color: #e7e7e7;
-  
-} */
 
 .grow {
   transition: all 0.3s ease;
@@ -64,7 +57,6 @@ textarea {
   border: none;
   resize: none; /* stops user from being able to resize the text input field */
 
-  /* background-color: #e9b9d2; */
   background-color: inherit;
 }
 

@@ -22,12 +22,12 @@ export default function App() {
     localStorage.setItem('all-notes', JSON.stringify(notes));
   }, [notes]);
 
-  const addNote = (...newNote) => {
+  const addNote = (...newNote) => { // spread syntax used here to imply this event handler is going to receive multiple parameters, therefore newNote becomes an array
     var today = new Date();
 
     setNotes((prev) => ([{
       id: nanoid(),
-      title: newNote[1],
+      title: newNote[1], // access different parameters by indexes
       text: newNote[0],
       colour: newNote[2],
       date: today.toLocaleDateString()
