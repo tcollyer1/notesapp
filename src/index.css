@@ -18,7 +18,8 @@ code {
 
 .container {
   max-width: 960px; /* nothing in the container will go beyond this length. So nothing gets stretched on bigger screens */
-  min-height: 100vh;
+ 
+  min-height: 100vh; /* So background is extended to full height of the user's window */
   
   /* these keep things centered on larger screens */
   margin-right: auto;
@@ -103,15 +104,21 @@ button:active {
   justify-content: space-between;
 }
 
-.delete-icon {
+.delete-icon, .edit-icon {
   cursor: pointer;
   color: #2a2a2a;
   transition: all 0.3s ease;
+  margin-right: 5px;
 }
 
 .delete-icon:hover {
   color: rgb(216, 64, 64);
   transform: rotateZ(+10deg) scale(1.7);
+}
+
+.edit-icon:hover {
+  color: rgb(64, 110, 216);
+  transform: rotateZ(-10deg) scale(1.7);
 }
 
 .search-container {
@@ -153,7 +160,7 @@ button:active {
   color: rgb(167, 65, 65);
 }
 
-.clear {
+.clear, .save-edit {
   margin-right: 5px;
 }
 

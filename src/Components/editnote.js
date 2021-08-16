@@ -1,10 +1,11 @@
+
 import {useState} from 'react';
 import ColourPicker from './colourpicker';
 
-const AddNote = ({handleNewNote, handleEditNote, isEditing}) => {
-    const [noteText, setNoteText] = useState('');
-    const [noteTitle, setNoteTitle] = useState('');
-    const [bgColour, setBgColour] = useState('#e7e7e7');
+const EditNote = ({index, id, text, title, colour, date, setEditedNote}) => {
+    const [noteText, setNoteText] = useState(text);
+    const [noteTitle, setNoteTitle] = useState(title);
+    const [bgColour, setBgColour] = useState(colour);
     const charLimit = 500;
     const titleCharLimit = 22;
 
@@ -32,25 +33,22 @@ const AddNote = ({handleNewNote, handleEditNote, isEditing}) => {
             return; // if note is empty or just spaces/new lines, do not allow it to be submit
         }
 
-        if (isEditing) {
-            handleEditNote(noteText, noteTitle, bgColour);
-        }
-
         if (noteTitle.trim().length <= 0) {
-            handleNewNote(noteText, 'Untitled', bgColour);
+            setEditedNote(id, 'Untitled', noteText, bgColour, date, index);
         }
+        
         else {
-            handleNewNote(noteText, noteTitle, bgColour);
+            setEditedNote(id, noteTitle, noteText, bgColour, date, index);
         }
-
-        setNoteText(''); // clear new note text area upon submitting
-        setNoteTitle('');
-        setBgColour('#e7e7e7');
     };
 
     const handleClear = () => {
         setNoteText('');
         setNoteTitle('');
+    };
+
+    const handleCancel = () => {
+        setEditedNote(id, title, text, colour, date, index);
     };
 
     const newNoteColour = {backgroundColor: bgColour};
@@ -83,7 +81,8 @@ const AddNote = ({handleNewNote, handleEditNote, isEditing}) => {
                 <div>
                     
                     <button className="clear" onClick={handleClear}>Clear</button>
-                    <button className="save" onClick={handleSubmit}>Add note</button>
+                    <button className="save-edit" onClick={handleSubmit}>Update</button>
+                    <button className="cancel" onClick={handleCancel}>Cancel</button>
                 </div>
                 
             </div>
@@ -91,4 +90,4 @@ const AddNote = ({handleNewNote, handleEditNote, isEditing}) => {
     );
 }
 
-export default AddNote;
+export default EditNote;
