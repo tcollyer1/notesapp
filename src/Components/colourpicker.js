@@ -1,7 +1,7 @@
 import { CirclePicker } from "react-color";
 import Tippy from '@tippyjs/react';
 
-const colours = ['#e7e7e7', '#badde8', '#fff080', '#b3fca4', '#fcbe8d', '#e2c2ff', '#ffd4f6'];
+const colours = ['#e7e7e7', '#badde8', '#fff080', '#b3fca4', '#e2c2ff', '#ffd4f6', '#fcbe8d', '#ff7070', '#c99677', '#6e6e6e'];
 
 const ColourPicker = ({handleColourChange, currentColour}) => { 
 

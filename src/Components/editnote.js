@@ -79,7 +79,6 @@ const EditNote = ({index, id, text, title, colour, date, setEditedNote}) => {
             <div className="note-footer">
                 <small>{charLimit - noteText.length} left</small>
                 <div>
-                    
                     <button className="clear" onClick={handleClear}>Clear</button>
                     <button className="save-edit" onClick={handleSubmit}>Update</button>
                     <button className="cancel" onClick={handleCancel}>Cancel</button>

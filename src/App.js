@@ -26,7 +26,6 @@ export default function App() {
 
   const addNote = (...newNote) => { // spread syntax used here to imply this event handler is going to receive multiple parameters, therefore newNote becomes an array
     var noteIndex = 0;
-    console.log("Adding note, index is " + noteIndex + ".");
     var today = new Date();
 
 
@@ -56,7 +55,7 @@ export default function App() {
 
   const editNote = (...noteData) => {
     // change title and text of edited note using the ID
-    console.log("note data for " + noteData[0] + " received, with title '" + noteData[1] + "' and text content '" + noteData[2] + "'.");
+    
     setEditNoteDetails({
       id: noteData[0],
       title: noteData[1],
